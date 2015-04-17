@@ -1,4 +1,4 @@
-setwd("/Users/ke.huang/Documents/workspace")
+setwd("~/Documents/workspace")
 download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "dataset.zip", method="curl")
 unzip("dataset.zip")
 file.remove("dataset.zip")
@@ -28,7 +28,8 @@ colnames(Tr_act)<-"activity.label"
 
 #----Part2-Solution to step 1
 Glob_D<-rbind(cbind(Te_subj, Te_act, Te_data), cbind(Tr_subj, Tr_act, Tr_data))
-
+#Save the combined data to local file.
+write.table(Glob_D, "Glob_clean_data.txt", row.name=F, sep="\t")
 #----Part3-Solution to step 2
 #extract the index of mean/std variable from "features.txt";
 idx<-fea_code[grepl("mean\\(\\)|std\\(\\)", fea_code[,2]), ]
