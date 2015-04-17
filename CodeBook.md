@@ -12,12 +12,10 @@
 
 7. Use rbind and cbind to combine the tables of test group and training group, and get the result (dataframe "Glob_D") for step 1.
 
-8. Output the tidy dataset created in step 7 (file name "Glob_clean_data.txt").
+8. Obtain the index of mean/std (use function "grepl") variable from "features.txt", and extracts only the measurements on the mean and standard deviation for each measurement using the index (dataframe "M_and_SD").
 
-9. Obtain the index of mean/std (use function "grepl") variable from "features.txt", and extracts only the measurements on the mean and standard deviation for each measurement using the index (dataframe "M_and_SD").
+9. Transform the dataset, convert the class of activity column to factor. Label the activities using descriptive name.
 
-10. Transform the dataset, convert the class of activity column to factor. Label the activities using descriptive name.
+10. Use ddply of the "plyr" packge creates the second, independent tidy data set with the average of each variable for each activity and each subject (dataframe "Mean_of_M_and_SD").
 
-11. Use ddply of the "plyr" packge creates the second, independent tidy data set with the average of each variable for each activity and each subject (dataframe "Mean_of_M_and_SD").
-
-12. Output the data in tab delimited formate to local file ("Mean_of_M_and_SD.txt").
+11. Output the data in tab delimited formate to local file ("Mean_of_M_and_SD.txt").
